@@ -25,22 +25,30 @@
             app:destination="@id/instructionsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/shoeListingFragment"
-        android:name="com.example.bookstoreineventory.screens.shoeListing.ShoeListingFragment"
-        android:label="ShoeListingFragment"
-        tools:layout="@layout/fragment_shoe_listing" />
+        android:id="@+id/bookListingFragment"
+        android:name="com.example.bookstoreineventory.screens.book.BookListingFragment"
+        android:label="BookListingFragment"
+        tools:layout="@layout/fragment_book_listing" >
+        <action
+            android:id="@+id/action_bookListingFragment_to_bookDetailFragment"
+            app:destination="@id/bookDetailFragment" />
+        <action
+            android:id="@+id/action_bookListingFragment_to_loginFragment2"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/shoeDetailFragment"
-        android:name="com.example.bookstoreineventory.screens.shoeDetail.ShoeDetailFragment"
-        android:label="ShoeDetailFragment"
-        tools:layout="@layout/fragment_shoe_detail" />
+        android:id="@+id/bookDetailFragment"
+        android:name="com.example.bookstoreineventory.screens.book.BookDetailFragment"
+        android:label="BookDetailFragment"
+        tools:layout="@layout/fragment_book_detail" />
     <fragment
         android:id="@+id/instructionsFragment"
         android:name="com.example.bookstoreineventory.screens.instructions.InstructionsFragment"
         android:label="InstructionsFragment"
         tools:layout="@layout/fragment_instructions" >
         <action
-            android:id="@+id/action_instructionsFragment_to_shoeListingFragment"
-            app:destination="@id/shoeListingFragment" />
+            android:id="@+id/action_instructionsFragment_to_bookListingFragment"
+            app:destination="@id/bookListingFragment"
+            app:popUpTo="@id/loginFragment" />
     </fragment>
 </navigation>

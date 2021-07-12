@@ -13,4 +13,6 @@
     <string name="Instructions">Instructions</string>
     <string name="Next">Next</string>
     <string name="InstructionsMessage">You can add a new book or add a book entry.</string>
+    <string name="Logout">Logout</string>
+    <string name="BookName">BookName</string>
 </resources>

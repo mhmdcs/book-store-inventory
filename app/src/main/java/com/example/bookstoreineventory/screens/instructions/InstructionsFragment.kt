@@ -22,8 +22,10 @@ class InstructionsFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_instructions, container, false)
 
         binding.nextButton.setOnClickListener(){
-        Navigation.findNavController(it).navigate(InstructionsFragmentDirections.actionInstructionsFragmentToShoeListingFragment())
+        Navigation.findNavController(it).navigate(InstructionsFragmentDirections.actionInstructionsFragmentToBookListingFragment())
         }
+
+
 
     return binding.root
     }
