@@ -9,18 +9,30 @@
         android:layout_height="match_parent"
         tools:context=".screens.login.LoginFragment">
 
+        <TextView
+            android:id="@+id/bookStoreInventoryTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:text="@string/BookStoreInventory"
+            android:textAlignment="center"
+            android:textColor="@color/ultra_dark_gold"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <EditText
             android:id="@+id/emailEditText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="220dp"
             android:ems="10"
             android:freezesText="false"
             android:hint="@string/emailHint"
             android:inputType="textPersonName|textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/bookStoreInventoryTextView" />
 
         <EditText
             android:id="@+id/passwordEditText"
@@ -56,6 +68,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/passwordEditText"
             app:layout_constraintTop_toBottomOf="@+id/passwordEditText" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -19,7 +19,11 @@
         android:id="@+id/welcomeFragment"
         android:name="com.example.bookstoreineventory.screens.welcome.WelcomeFragment"
         android:label="WelcomeFragment"
-        tools:layout="@layout/fragment_welcome"/>
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_instructionsFragment"
+            app:destination="@id/instructionsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/shoeListingFragment"
         android:name="com.example.bookstoreineventory.screens.shoeListing.ShoeListingFragment"
@@ -34,5 +38,9 @@
         android:id="@+id/instructionsFragment"
         android:name="com.example.bookstoreineventory.screens.instructions.InstructionsFragment"
         android:label="InstructionsFragment"
-        tools:layout="@layout/fragment_instructions" />
+        tools:layout="@layout/fragment_instructions" >
+        <action
+            android:id="@+id/action_instructionsFragment_to_shoeListingFragment"
+            app:destination="@id/shoeListingFragment" />
+    </fragment>
 </navigation>
