@@ -14,7 +14,6 @@ import com.example.bookstoreineventory.databinding.FragmentBookListingBinding
 class BookListingFragment : Fragment() {
 
     private lateinit var binding: FragmentBookListingBinding
-    private lateinit var viewModel: BookListingViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,9 +21,6 @@ class BookListingFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_book_listing,container,false)
-        viewModel = ViewModelProvider(this).get(BookListingViewModel::class.java)
-        binding.bookListingViewModel = viewModel
-        binding.lifecycleOwner = this
 
        // viewModel.books.
 

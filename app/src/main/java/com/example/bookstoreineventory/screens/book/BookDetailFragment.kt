@@ -6,11 +6,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.example.bookstoreineventory.Book
 import com.example.bookstoreineventory.R
 import com.example.bookstoreineventory.databinding.FragmentBookDetailBinding
 
 
 class BookDetailFragment : Fragment() {
+
+    private lateinit var bookDetailViewModel: BookDetailViewModel
+    private lateinit var binding: FragmentBookDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,4 +28,18 @@ class BookDetailFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        bookDetailViewModel = ViewModelProvider(requireActivity())
+            .get(BookDetailViewModel::class.java)
+
+        //telling Live Data to observe this Lifecycle Owner
+        binding.lifecycleOwner = this
+
+        binding.book = Book("Book Name", "Book Description","Book Author","Book Price")
+
+        view?.findNavController()?.navigate(BookDetailFragmentDirections.actionBookDetailFragmentToBookListingFragment())
+
+    }
 }

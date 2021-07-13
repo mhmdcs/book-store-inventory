@@ -40,7 +40,11 @@
         android:id="@+id/bookDetailFragment"
         android:name="com.example.bookstoreineventory.screens.book.BookDetailFragment"
         android:label="BookDetailFragment"
-        tools:layout="@layout/fragment_book_detail" />
+        tools:layout="@layout/fragment_book_detail" >
+        <action
+            android:id="@+id/action_bookDetailFragment_to_bookListingFragment"
+            app:destination="@id/bookListingFragment" />
+    </fragment>
     <fragment
         android:id="@+id/instructionsFragment"
         android:name="com.example.bookstoreineventory.screens.instructions.InstructionsFragment"

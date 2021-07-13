@@ -1,12 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="book"
+            type="com.example.bookstoreineventory.Book" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".screens.book.BookDetailFragment"
-        >
+        tools:context=".screens.book.BookDetailFragment">
+
+        <Button
+            android:id="@+id/addBookButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/bookDetails"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/inputlayout_book_price" />
+
+        <Button
+            android:id="@+id/cancelBookButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            app:layout_constraintBaseline_toBaselineOf="@+id/addBookButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/bookDetails" />
+
+        <TextView
+            android:id="@+id/bookDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:text="Book Details"
+            android:textColor="@color/ultra_dark_gold"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_book_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book Name"
+            app:layout_constraintStart_toEndOf="@id/bookDetails"
+            app:layout_constraintTop_toBottomOf="@id/bookDetails">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_book_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="@={book.bookName}"
+                tools:text="Book Name" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_book_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book Description"
+            app:layout_constraintStart_toEndOf="@id/inputlayout_book_name"
+            app:layout_constraintTop_toBottomOf="@id/inputlayout_book_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_book_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="@={book.bookDescription}"
+                tools:text="Book Description" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_book_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book Author"
+            app:layout_constraintStart_toEndOf="@id/inputlayout_book_description"
+            app:layout_constraintTop_toBottomOf="@id/inputlayout_book_description">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_book_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="@={book.bookAuthor}"
+                tools:text="Book Author" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout_book_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Book Price"
+            app:layout_constraintStart_toEndOf="@id/inputlayout_book_author"
+            app:layout_constraintTop_toBottomOf="@id/inputlayout_book_author">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edittext_book_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:text="@={book.bookPrice}"
+                tools:text="Book Price" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
