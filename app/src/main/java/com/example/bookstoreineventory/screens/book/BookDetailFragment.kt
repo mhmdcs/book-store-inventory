@@ -24,7 +24,7 @@ class BookDetailFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        var binding: FragmentBookDetailBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_book_detail,container,false)
+         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_book_detail,container,false)
         return binding.root
     }
 
@@ -39,7 +39,17 @@ class BookDetailFragment : Fragment() {
 
         binding.book = Book("Book Name", "Book Description","Book Author","Book Price")
 
-        view?.findNavController()?.navigate(BookDetailFragmentDirections.actionBookDetailFragmentToBookListingFragment())
+        binding.addBookButton.setOnClickListener(){
+
+            val book = binding.book
+            bookDetailViewModel.addBookDetail(book)
+
+            view?.findNavController()?.navigate(BookDetailFragmentDirections.actionBookDetailFragmentToBookListingFragment())
+        }
+
+        binding.cancelBookButton.setOnClickListener(){
+            view?.findNavController()?.navigate(BookDetailFragmentDirections.actionBookDetailFragmentToBookListingFragment())
+        }
 
     }
 }

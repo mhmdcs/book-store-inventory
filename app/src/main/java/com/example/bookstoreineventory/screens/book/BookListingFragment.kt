@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -13,6 +14,7 @@ import com.example.bookstoreineventory.databinding.FragmentBookListingBinding
 
 class BookListingFragment : Fragment() {
 
+    private lateinit var bookDetailViewModel: BookDetailViewModel
     private lateinit var binding: FragmentBookListingBinding
 
     override fun onCreateView(
@@ -31,8 +33,33 @@ class BookListingFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
+        bookDetailViewModel = ViewModelProvider(requireActivity())
+            .get(BookDetailViewModel::class.java)
 
+        //telling Live Data to observe this Lifecycle Owner
+        binding.lifecycleOwner = this
+
+        bookDetailViewModel.books.observe(viewLifecycleOwner, Observer{ books->
+            if(books.isNotEmpty()){
+                insertBooks(books)
+            }
+        })
+
+    }
+
+    private fun insertBooks(books: List<Book>){
+        context?.let{ context ->
+            val bookContainer = binding.parentLayout
+            books.forEach(){ book->
+            val bookLayout = BookItem(context)
+                bookLayout.loadBook(book)
+                bookContainer.addView(bookLayout)
+            }
+        }
+    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
