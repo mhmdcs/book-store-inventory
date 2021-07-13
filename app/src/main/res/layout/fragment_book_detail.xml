@@ -50,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Book Name"
+            app:boxBackgroundColor="@color/white"
             app:layout_constraintStart_toEndOf="@id/bookDetails"
             app:layout_constraintTop_toBottomOf="@id/bookDetails">
 
@@ -57,7 +58,7 @@
                 android:id="@+id/edittext_book_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:text="@={book.bookName}"
                 tools:text="Book Name" />
 
@@ -69,6 +70,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Book Description"
+            app:boxBackgroundColor="@color/white"
             app:layout_constraintStart_toEndOf="@id/inputlayout_book_name"
             app:layout_constraintTop_toBottomOf="@id/inputlayout_book_name">
 
@@ -76,7 +78,7 @@
                 android:id="@+id/edittext_book_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:text="@={book.bookDescription}"
                 tools:text="Book Description" />
 
@@ -87,6 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Book Author"
+            app:boxBackgroundColor="@color/white"
             app:layout_constraintStart_toEndOf="@id/inputlayout_book_description"
             app:layout_constraintTop_toBottomOf="@id/inputlayout_book_description">
 
@@ -94,7 +97,7 @@
                 android:id="@+id/edittext_book_author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:text="@={book.bookAuthor}"
                 tools:text="Book Author" />
 
@@ -106,6 +109,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Book Price"
+            app:boxBackgroundColor="@color/white"
             app:layout_constraintStart_toEndOf="@id/inputlayout_book_author"
             app:layout_constraintTop_toBottomOf="@id/inputlayout_book_author">
 
@@ -113,7 +117,7 @@
                 android:id="@+id/edittext_book_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="textPersonName"
                 android:text="@={book.bookPrice}"
                 tools:text="Book Price" />
 

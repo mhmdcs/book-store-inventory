@@ -26,6 +26,7 @@ class BookItem: LinearLayout {
             binding.bookDescription.text = book.bookDescription
             binding.bookAuthor.text = book.bookAuthor
             binding.bookPrice.text = book.bookPrice
+            binding.lineSeparator.text = "___________________________________________"
         }
     }
 }

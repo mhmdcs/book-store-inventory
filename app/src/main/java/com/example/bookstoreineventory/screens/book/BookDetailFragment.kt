@@ -37,7 +37,7 @@ class BookDetailFragment : Fragment() {
         //telling Live Data to observe this Lifecycle Owner
         binding.lifecycleOwner = this
 
-        binding.book = Book("Book Name", "Book Description","Book Author","Book Price")
+        binding.book = Book("", "","","")
 
         binding.addBookButton.setOnClickListener(){
 
